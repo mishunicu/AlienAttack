@@ -17,6 +17,7 @@ script = ExtResource("1_tvy1o")
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-187, 649)
 rotation = -0.364526
+scale = Vector2(1.00284, 1.00956)
 loop = false
 
 [node name="Enemy_1" parent="PathFollow2D" instance=ExtResource("2_8e1fh")]
