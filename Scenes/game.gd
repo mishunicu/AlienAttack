@@ -12,3 +12,5 @@ func _on_player_damage_took():
 	if player_life == 0:
 		print("game over")
 		player.die()
+	else:
+		print(player_life)
