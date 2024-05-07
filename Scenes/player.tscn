@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwqnq7fbhoqhb"]
+
+[ext_resource type="Texture2D" uid="uid://ceik3e24pbf72" path="res://Assets/textures/player_ship.png" id="1_5al31"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_66jvt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u5jve"]
+radius = 25.0
+height = 94.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_66jvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_5al31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_u5jve")
+
+[node name="RocketContainer" type="Node" parent="."]

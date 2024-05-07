@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://blhwlcota046w"]
+
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_fmpue"]
+[ext_resource type="Texture2D" uid="uid://b64vjkfa3bafy" path="res://Assets/textures/bg.png" id="1_ludrj"]
+[ext_resource type="PackedScene" uid="uid://bwqnq7fbhoqhb" path="res://Scenes/player.tscn" id="2_o5qcq"]
+[ext_resource type="PackedScene" uid="uid://cqlbbne6dbam7" path="res://Scenes/rocket.tscn" id="3_cvvwh"]
+[ext_resource type="PackedScene" uid="uid://c1a6edllsimt0" path="res://Scenes/enemy_spawn.tscn" id="4_d1gli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl2g8"]
+size = Vector2(33, 722)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_fmpue")
+
+[node name="background" type="TextureRect" parent="."]
+z_index = -100
+offset_right = 1286.0
+offset_bottom = 722.0
+texture = ExtResource("1_ludrj")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_o5qcq")]
+z_index = 1
+position = Vector2(40, 360)
+
+[node name="Rocket" parent="." instance=ExtResource("3_cvvwh")]
+z_index = -1
+position = Vector2(105, 360)
+
+[node name="EnemySpawn" parent="." instance=ExtResource("4_d1gli")]
+
+[node name="Deathzone" type="Area2D" parent="."]
+position = Vector2(-128, 371)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+shape = SubResource("RectangleShape2D_xl2g8")
+
+[connection signal="damage_took" from="Player" to="." method="_on_player_damage_took"]
+[connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
