@@ -5,7 +5,7 @@ signal died
 @export var speed = 300
 
 func _physics_process(_delta):
-	global_position.x += -speed*_delta
+	global_position.x += -speed * _delta
 
 func die():
 	emit_signal("died")

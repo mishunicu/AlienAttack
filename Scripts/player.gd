@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 signal damage_took
+@onready var shoot_rocket_sound = $RocketShotSound
 
 var speed = 400
 var rocket_scene = preload("res://Scenes/rocket.tscn")
@@ -46,6 +47,7 @@ func _process(_delta):
 		shoot()
 
 func shoot():
+	shoot_rocket_sound.play()
 	var rocket_instance = rocket_scene.instantiate()
 	rocket_container.add_child(rocket_instance)
 	rocket_instance.global_position = global_position
