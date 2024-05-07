@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7ravrp4o8viq"]
 
+[ext_resource type="Script" path="res://Scripts/enemy_1.gd" id="1_34put"]
 [ext_resource type="Texture2D" uid="uid://c7klallfev7nk" path="res://Assets/textures/enemy_ship.png" id="1_dgf27"]
-[ext_resource type="Script" path="res://Scenes/enemy_1.gd" id="1_lmpaq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knxla"]
 radius = 331.047
@@ -13,7 +13,7 @@ radius = 6.0
 [node name="Enemy_1" type="Area2D"]
 collision_layer = 2
 collision_mask = 13
-script = ExtResource("1_lmpaq")
+script = ExtResource("1_34put")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.5708

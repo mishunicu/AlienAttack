@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://blhwlcota046w"]
+[gd_scene load_steps=8 format=3 uid="uid://blhwlcota046w"]
 
-[ext_resource type="Script" path="res://Scenes/game.gd" id="1_fmpue"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_fmpue"]
 [ext_resource type="Texture2D" uid="uid://b64vjkfa3bafy" path="res://Assets/textures/bg.png" id="1_ludrj"]
+[ext_resource type="PackedScene" uid="uid://btvchcxaqk2fc" path="res://Scenes/hud.tscn" id="2_g5wf4"]
 [ext_resource type="PackedScene" uid="uid://bwqnq7fbhoqhb" path="res://Scenes/player.tscn" id="2_o5qcq"]
 [ext_resource type="PackedScene" uid="uid://cqlbbne6dbam7" path="res://Scenes/rocket.tscn" id="3_cvvwh"]
 [ext_resource type="PackedScene" uid="uid://c1a6edllsimt0" path="res://Scenes/enemy_spawn.tscn" id="4_d1gli"]
@@ -11,6 +12,10 @@ size = Vector2(33, 722)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_fmpue")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("2_g5wf4")]
 
 [node name="background" type="TextureRect" parent="."]
 z_index = -100
@@ -38,4 +43,5 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_xl2g8")
 
 [connection signal="damage_took" from="Player" to="." method="_on_player_damage_took"]
+[connection signal="enemy_spawned" from="EnemySpawn" to="." method="_on_enemy_spawn_enemy_spawned"]
 [connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
