@@ -15,10 +15,10 @@ curve = SubResource("Curve2D_qa6ot")
 script = ExtResource("1_tvy1o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-187, 649)
-rotation = -0.364526
+position = Vector2(1416, 108)
+rotation = -0.166803
 scale = Vector2(1.00284, 1.00956)
+progress = 1710.12
 loop = false
 
 [node name="Enemy_2" parent="PathFollow2D" instance=ExtResource("2_20h4b")]
-scale = Vector2(1, 1)
