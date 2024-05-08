@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://blhwlcota046w"]
+[gd_scene load_steps=9 format=3 uid="uid://blhwlcota046w"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_fmpue"]
 [ext_resource type="Texture2D" uid="uid://b64vjkfa3bafy" path="res://Assets/textures/bg.png" id="1_ludrj"]
 [ext_resource type="PackedScene" uid="uid://btvchcxaqk2fc" path="res://Scenes/hud.tscn" id="2_g5wf4"]
 [ext_resource type="PackedScene" uid="uid://bwqnq7fbhoqhb" path="res://Scenes/player.tscn" id="2_o5qcq"]
-[ext_resource type="PackedScene" uid="uid://cqlbbne6dbam7" path="res://Scenes/rocket.tscn" id="3_cvvwh"]
 [ext_resource type="PackedScene" uid="uid://c1a6edllsimt0" path="res://Scenes/enemy_spawn.tscn" id="4_d1gli"]
 [ext_resource type="AudioStream" uid="uid://dvpddgjpppcqx" path="res://Assets/audio/hit.wav" id="7_7uvo0"]
 [ext_resource type="AudioStream" uid="uid://b0x7cci3ctcj7" path="res://Assets/audio/explode.wav" id="8_13fwd"]
@@ -29,10 +28,6 @@ stretch_mode = 1
 [node name="Player" parent="." instance=ExtResource("2_o5qcq")]
 z_index = 1
 position = Vector2(40, 360)
-
-[node name="Rocket" parent="." instance=ExtResource("3_cvvwh")]
-z_index = -1
-position = Vector2(105, 360)
 
 [node name="EnemySpawn" parent="." instance=ExtResource("4_d1gli")]
 

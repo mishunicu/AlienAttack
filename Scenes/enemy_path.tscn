@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b08ii8r7pklu7" path="res://Scenes/enemy_2.tscn" id="2_20h4b"]
 
 [sub_resource type="Curve2D" id="Curve2D_qa6ot"]
+bake_interval = 10.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -187, 649, -174.906, 36.9994, 174.906, -36.9994, 421, 417, -102.589, 53.8174, 102.589, -53.8174, 828, 207, 0, 0, 0, 0, 1416, 108)
+"points": PackedVector2Array(0, 0, 0, 0, -205, 596, -174.906, 36.9994, 174.906, -36.9994, 66, 383, -102.589, 53.8174, 102.589, -53.8174, 363, 540, -132.149, -13.3484, 132.149, 13.3484, 616, 207, -94.7736, -32.0362, 94.7736, 32.0362, 824, 435, -72.0814, 6.6742, 72.0814, -6.6742, 1131, 375, 0, 0, 0, 0, 1262, 266, 0, 0, 0, 0, 1355, 206, 0, 0, 0, 0, 1501, 108)
 }
-point_count = 4
+point_count = 9
 
 [node name="Path2D" type="Path2D"]
 position = Vector2(2, -27)
@@ -15,10 +16,11 @@ curve = SubResource("Curve2D_qa6ot")
 script = ExtResource("1_tvy1o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(1416, 108)
-rotation = -0.166803
+position = Vector2(1377.15, 191.133)
+rotation = -0.591157
 scale = Vector2(1.00284, 1.00956)
-progress = 1710.12
+progress = 2111.47
 loop = false
 
 [node name="Enemy_2" parent="PathFollow2D" instance=ExtResource("2_20h4b")]
+speed = 0

@@ -18,7 +18,7 @@ func spawn_enemy():
 	
 	enemy_instance.global_position = random_spawn_position.global_position
 	emit_signal("enemy_spawned", enemy_instance)
-	#add_child(enemy_instance)
+	#add_child(enemy_instance) 
 
 func _on_path_enemy_timer_timeout():
 	spawn_path_enemy()
